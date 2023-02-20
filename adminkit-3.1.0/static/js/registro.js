@@ -9,6 +9,11 @@ impRegistrarse.addEventListener('submit', valDatos);
 
 function valDatos(){
 
+    
+    if(!impNombre.value || !impContraseña.value || impCorreo.value || impEmpresa.value){
+        alert("rellenar todos los campos");
+    }
+
     const Usuario = 
     {
         nombre:impNombre.value,
