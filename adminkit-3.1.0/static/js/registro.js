@@ -1,11 +1,20 @@
-let impNombre = document.getElementById('nombre');
-let impEmpresa = document.getElementById('compañia');
-let impCorreo = document.getElementById('correo');
-let impContraseña = document.getElementById('contraseña');
-let impRegistrarse = document.getElementById('formSingUp');  
+//variables registro ---------------------------------------------------->
+let impNombre = document.getElementById('nombreSignUp');
+let impEmpresa = document.getElementById('compañiaSignUp');
+let impCorreo = document.getElementById('correoSignUp');
+let impContraseña = document.getElementById('contraseñaSignUp');
+let impRegistrarse = document.getElementById('formSignUp');  
 
+//varailbes incio de secion --------------------------------------------->
+let impContraseñaSingIn = document.getElementById('contraseñaSignIn');
+let impCorreoSingIn = document.getElementById('correoSignIn');
+let impLogearse = document.getElementById('formSignIn');
+//----------------------------------------------------------------------->
+if(impLogearse != null) impLogearse.addEventListener('submit', Login);
 
-impRegistrarse.addEventListener('submit', valDatos);
+if(impRegistrarse != null) impRegistrarse.addEventListener('submit', valDatos);
+
+//Funciones ------------------------------------------------------------->
 
 function valDatos(event)
 {
@@ -36,7 +45,7 @@ function valDatos(event)
     }
     else
     {
-        const Usuario = 
+        let Usuario = 
         { 
             nombre:impNombre.value,
             contraseña:impContraseña.value,
@@ -47,9 +56,36 @@ function valDatos(event)
         localStorage.setItem('Usuario',JSON.stringify(Usuario));
     }
 }
-array.forEach(element => {
-    
-});
+
+function Login(event){
+
+verificarUsuario = JSON.parse(localStorage.getItem('Usuario'));
+
+if(verificarUsuario.correo !== impCorreoSingIn.value || 
+    verificarUsuario.contraseña !== impContraseñaSingIn.value)
+{
+    event.preventDefault();
+    alert("Usuario o contraseña no validos");
+    console.log('ErrorLogin');
+}
+else
+{
+    let secionUsuario = 
+    {
+        contraseña:impContraseñaSingIn.value,
+        correo:impCorreoSingIn.value,
+    }
+
+    localStorage.setItem('secionUsuario',JSON.stringify(secionUsuario));
+} 
+
+}
+/*
 console.log(JSON.parse(localStorage.getItem('Usuario')));
-
-
+console.log(JSON.parse(localStorage.getItem('secionUsuario')));
+verificarUsuario = JSON.parse(localStorage.getItem('Usuario'));
+console.log(verificarUsuario.correo);
+console.log(impCorreoSingIn.value);
+console.log(verificarUsuario.contraseña);
+console.log(impContraseñaSingIn.value );
+*/

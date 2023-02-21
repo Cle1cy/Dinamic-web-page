@@ -40,14 +40,14 @@
 									<div class="text-center">
 										<img src="img/avatars/avatar.jpg" alt="Charles Hall" class="img-fluid rounded-circle" width="132" height="132" />
 									</div>
-									<form>
+									<form id="formSignIn">
 										<div class="mb-3">
-											<label class="form-label">Email</label>
-											<input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email" />
+											<label class="form-label" >Correo</label>
+											<input class="form-control form-control-lg" id="correoSignIn" type="email" name="email" placeholder="Enter your email" />
 										</div>
 										<div class="mb-3">
-											<label class="form-label">Password</label>
-											<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password" />
+											<label class="form-label" >Contraseña</label>
+											<input class="form-control form-control-lg" id="contraseñaSignIn" type="password" name="password" placeholder="Enter your password" />
 											<small>
             <a href="index.html">Forgot password?</a>
           </small>
@@ -61,8 +61,7 @@
           </label>
 										</div>
 										<div class="text-center mt-3">
-											<a href="index.html" class="btn btn-lg btn-primary">Sign in</a>
-											<!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+											<button type="submit" id="btnSignIn" class="btn btn-lg btn-primary">Sign in</button>
 										</div>
 									</form>
 								</div>
@@ -76,5 +75,5 @@
 	</main>
 
 </body>
-
+<script src="js/registro.js"></script>
 </html>
