@@ -9,6 +9,9 @@ let impRegistrarse = document.getElementById('formSignUp');
 let impContraseñaSingIn = document.getElementById('contraseñaSignIn');
 let impCorreoSingIn = document.getElementById('correoSignIn');
 let impLogearse = document.getElementById('formSignIn');
+//Enlaces externos-------------------------------------------------------->
+//let enlaceEsternoUno =document.getElementById('');
+
 //----------------------------------------------------------------------->
 if(impLogearse != null) impLogearse.addEventListener('submit', Login);
 
@@ -80,6 +83,16 @@ else
 } 
 
 }
+//funcion de acces a enlace externo solo por logeo
+/*
+enlaceExterno.addEventListener('click', (event) => {
+
+    if(secionUsuario.contraseña !== Usuario.contraseña && secionUsuario.correo !== Usuario.correo) event.preventDefault()
+
+})
+
+*/
+
 /*
 console.log(JSON.parse(localStorage.getItem('Usuario')));
 console.log(JSON.parse(localStorage.getItem('secionUsuario')));
