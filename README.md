@@ -1,6 +1,6 @@
 # Dinamic-web-page
 
-A dinamic web page make for a university proyect, using abase template in order to meke it faster and easy at the first intance, the idea is build the page as a real proyect with a general aspects that every real proyect should have, some of the more importants of these receriments are.
+A dinamic web page make for a university proyect, using abase template in order to meke it faster and easy at the first intance, the idea is build the page as a real proyect with a general aspects that every real proyect should have, some of the more importants of these requeriments are.
 
 - Responsive 
 - Navitgation centralice with js
