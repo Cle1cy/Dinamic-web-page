@@ -10,7 +10,8 @@ let impContraseñaSingIn = document.getElementById('contraseñaSignIn');
 let impCorreoSingIn = document.getElementById('correoSignIn');
 let impLogearse = document.getElementById('formSignIn');
 //Enlaces externos-------------------------------------------------------->
-//let enlaceEsternoUno =document.getElementById('');
+//let enlaceExterno =document.getElementById('');
+let inicio = docuemtn.getElementById('img');
 
 //----------------------------------------------------------------------->
 if(impLogearse != null) impLogearse.addEventListener('submit', Login);
@@ -83,6 +84,9 @@ else
 } 
 
 }
+
+
+inicio.addEventListener('click', () =>{window.location = "#"});
 //funcion de acces a enlace externo solo por logeo
 /*
 enlaceExterno.addEventListener('click', (event) => {
