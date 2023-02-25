@@ -13,4 +13,29 @@ enlaceExterno.addEventListener('click', (event) => {
             event.preventDefault();
         }
 })
+
+let btn1 = document.getElementById('btn');
+let btn2 = document.getElementById('btn');
+let btn3 = document.getElementById('btn');
+let btn4 = document.getElementById('btn');
+let btn5 = document.getElementById('btn');
+let btn6 = document.getElementById('btn');
+let btn7 = document.getElementById('btn');
+let btn8 = document.getElementById('btn');
+let btn9 = document.getElementById('btn');
+let btn10 = document.getElementById('btn');
+let btn11 = document.getElementById('btn');
+let btn12 = document.getElementById('btn');
+let btn13 = document.getElementById('btn');
+let btn14 = document.getElementById('btn');
+let btn15 = document.getElementById('btn');
+let btn16 = document.getElementById('btn');
+let btn17 = document.getElementById('btn');
+let btn18 = document.getElementById('btn');
+let btn19 = document.getElementById('btn');
+
+
+//Navegacion ----------------------------------->
+
+
 //# sourceMappingURL=app.js.map
