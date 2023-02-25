@@ -15396,6 +15396,13 @@ span.flatpickr-weekday {
     }
 }
 
+.hcolor{
+    color: #DC8449;
+}
+.hiden{
+    display: none;
+    color: #DC8449;
+}
 
 
 
