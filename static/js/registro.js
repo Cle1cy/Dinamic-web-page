@@ -9,6 +9,7 @@ let impRegistrarse = document.getElementById('formSignUp');
 let impContraseñaSingIn = document.getElementById('contraseñaSignIn');
 let impCorreoSingIn = document.getElementById('correoSignIn');
 let impLogearse = document.getElementById('formSignIn');
+let backindex = document.getElementById('btnSignIn-back')
 //ERRORES-------------------------------------------------------->
 let errorNombre = document.getElementById('form-label-error-nombre');
 let errorCorreo = document.getElementById('form-label-error-correo');
@@ -21,7 +22,10 @@ if(impLogearse != null) impLogearse.addEventListener('submit', Login);
 if(impRegistrarse != null) impRegistrarse.addEventListener('submit', valDatos);
 
 //Funciones ------------------------------------------------------------->
-
+backindex.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.href = event.target.href;
+})
 
 function valDatos(event)
 {
