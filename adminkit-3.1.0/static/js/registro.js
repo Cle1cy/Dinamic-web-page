@@ -91,9 +91,7 @@ else
 
 } 
 
-
 }
-
 
 
 console.log(JSON.parse(localStorage.getItem('Usuario')));
