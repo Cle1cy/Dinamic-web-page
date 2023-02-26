@@ -54,51 +54,48 @@ function valDatos(event)
     }
     else
     {
+        const MD5password = CryptoJS.MD5(impContraseña.value).toString();
         let Usuario = 
         { 
             nombre:impNombre.value,
-            contraseña:impContraseña.value,
+            contraseña:MD5password,
             correo:impCorreo.value,
             empresa:impEmpresa.value
         }
         
         localStorage.setItem('Usuario',JSON.stringify(Usuario));
+        window.location.href = 'pages-sign-in.html';
     }
 }
 
 
 function Login(event){
 let error = document.getElementById('form-label-error');
-let good = document.getElementById('form-label-good');
 verificarUsuario = JSON.parse(localStorage.getItem('Usuario'));
 
 if(verificarUsuario.correo !== impCorreoSingIn.value || 
-    verificarUsuario.contraseña !== impContraseñaSingIn.value)
+    verificarUsuario.contraseña !== CryptoJS.MD5(impContraseñaSingIn.value).toString())
 {
     event.preventDefault();
     error.classList.remove('hiden')
 }
 else
 {
+    const MD5passwordLognIn =  CryptoJS.MD5(impContraseñaSingIn.value).toString();
     error.classList.add('hiden')
     let secionUsuario = 
     {
-        contraseña:impContraseñaSingIn.value,
+        contraseña:MD5passwordLognIn,
         correo:impCorreoSingIn.value,
     }
 
     localStorage.setItem('secionUsuario',JSON.stringify(secionUsuario));
-
+    location.href = '../index.html';
 } 
 
 }
 
-
 console.log(JSON.parse(localStorage.getItem('Usuario')));
 console.log(JSON.parse(localStorage.getItem('secionUsuario')));
-verificarUsuario = JSON.parse(localStorage.getItem('Usuario'));
-console.log(verificarUsuario.correo);
-console.log(impCorreoSingIn.value);
-console.log(verificarUsuario.contraseña);
-console.log(impContraseñaSingIn.value );
+
 

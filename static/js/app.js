@@ -43330,6 +43330,28 @@ if (enlaceExterno != null)
       event.preventDefault();
     }
   });
+//Loge OUT------------------------------------------->
+let LogOUT = document.getElementById('LogOut');
+
+LogOUT.addEventListener('click', () =>   
+{
+  if (
+    secionUsuario.contraseña === Usuario.contraseña &&
+    secionUsuario.correo === Usuario.correo
+    ) 
+  {
+    secionUsuario.contraseña = "";
+    secionUsuario.correo = "";
+    localStorage.setItem('secionUsuario', JSON.stringify(secionUsuario));
+    alert('a salido de su cuenta');
+
+  }else alert('No hay ninguna secion');
+});
+
+
+console.log(JSON.parse(localStorage.getItem('Usuario')));
+console.log(JSON.parse(localStorage.getItem('secionUsuario')));
+
 
   //Navegacion ----------------------------------->
 let btn1 = document.getElementById("btn1");
