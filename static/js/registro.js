@@ -64,7 +64,7 @@ function valDatos(event)
         }
         
         localStorage.setItem('Usuario',JSON.stringify(Usuario));
-        window.location.href = 'pages-sign-in.html';
+        window.location.replace("pages-sign-in.html");
     }
 }
 
@@ -90,7 +90,7 @@ else
     }
 
     localStorage.setItem('secionUsuario',JSON.stringify(secionUsuario));
-    location.href = '../index.html';
+    window.location.replace("../index.html");
 } 
 
 }
