@@ -86,6 +86,3 @@ function Login(event) {
     window.location.replace("../index.html");
   }
 }
-
-console.log(JSON.parse(localStorage.getItem("Usuario")));
-console.log(JSON.parse(localStorage.getItem("secionUsuario")));

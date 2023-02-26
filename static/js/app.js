@@ -43321,18 +43321,21 @@ let enlaceExterno = document.getElementById("deny_lognIn");
 let Usuario = JSON.parse(localStorage.getItem("Usuario"));
 let secionUsuario = JSON.parse(localStorage.getItem("secionUsuario"));
 if (enlaceExterno != null)
-  enlaceExterno.addEventListener("click", (event) => {
-    if (
+  enlaceExterno.addEventListener("click", (event) => 
+  {
+    if (secionUsuario == null) {
+      alert("por favor incia secion");
+      event.preventDefault();
+    } else if (
       secionUsuario.contraseña !== Usuario.contraseña ||
       secionUsuario.correo !== Usuario.correo ||
-      secionUsuario.contraseña === "" || 
-      secionUsuario.correo === "" || 
-      secionUsuario == null 
-
+      secionUsuario.contraseña === "" ||
+      secionUsuario.correo === ""
     ) {
       alert("por favor incia secion");
       event.preventDefault();
     }
+    
   });
 //Loge OUT------------------------------------------->
 let LogOUT = document.getElementById('LogOut');
@@ -43351,12 +43354,6 @@ LogOUT.addEventListener('click', () =>
 
   }else alert('No hay ninguna secion');
 });
-
-
-console.log(JSON.parse(localStorage.getItem('Usuario')));
-console.log(JSON.parse(localStorage.getItem('secionUsuario')));
-
-
 
   //Navegacion ----------------------------------->
 let btn1 = document.getElementById("btn1");
