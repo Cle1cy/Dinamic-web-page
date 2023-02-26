@@ -43324,7 +43324,9 @@ if (enlaceExterno != null)
   enlaceExterno.addEventListener("click", (event) => {
     if (
       secionUsuario.contraseña !== Usuario.contraseña ||
-      secionUsuario.correo !== Usuario.correo 
+      secionUsuario.correo !== Usuario.correo ||
+      secionUsuario.contraseña === "" || 
+      secionUsuario.correo === "" 
     ) {
       alert("por favor incia secion");
       event.preventDefault();
@@ -43339,7 +43341,7 @@ LogOUT.addEventListener('click', () =>
     secionUsuario.contraseña === Usuario.contraseña &&
     secionUsuario.correo === Usuario.correo
     ) 
-  {
+  { 
     secionUsuario.contraseña = "";
     secionUsuario.correo = "";
     localStorage.setItem('secionUsuario', JSON.stringify(secionUsuario));
@@ -43351,6 +43353,7 @@ LogOUT.addEventListener('click', () =>
 
 console.log(JSON.parse(localStorage.getItem('Usuario')));
 console.log(JSON.parse(localStorage.getItem('secionUsuario')));
+
 
 
   //Navegacion ----------------------------------->
@@ -43439,8 +43442,5 @@ function navegacion(event) {
   if (link) window.location.href = link.href;
 }
 
-console.log(JSON.parse(localStorage.getItem("Usuario")));
-console.log(JSON.parse(localStorage.getItem("secionUsuario")));
 
-console.log('holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 //# sourceMappingURL=app.js.map
