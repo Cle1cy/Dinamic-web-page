@@ -43327,8 +43327,7 @@ if (enlaceExterno != null)
       secionUsuario.correo !== Usuario.correo ||
       secionUsuario.contraseña === "" || 
       secionUsuario.correo === "" || 
-      secionUsuario.correo == null || 
-      secionUsuario.contraseña == null
+      secionUsuario == null 
 
     ) {
       alert("por favor incia secion");
