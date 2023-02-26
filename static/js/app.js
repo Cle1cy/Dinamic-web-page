@@ -43323,8 +43323,8 @@ let secionUsuario = JSON.parse(localStorage.getItem("secionUsuario"));
 if (enlaceExterno != null)
   enlaceExterno.addEventListener("click", (event) => {
     if (
-      secionUsuario.contraseña !== Usuario.contraseña &&
-      secionUsuario.correo !== Usuario.correo
+      secionUsuario.contraseña !== Usuario.contraseña ||
+      secionUsuario.correo !== Usuario.correo 
     ) {
       alert("por favor incia secion");
       event.preventDefault();
@@ -43439,5 +43439,8 @@ function navegacion(event) {
   if (link) window.location.href = link.href;
 }
 
+console.log(JSON.parse(localStorage.getItem("Usuario")));
+console.log(JSON.parse(localStorage.getItem("secionUsuario")));
 
+console.log('holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 //# sourceMappingURL=app.js.map
