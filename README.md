@@ -8,7 +8,7 @@ A dinamic web page made for a university proyect, using a base template looking 
 - Some html documents can't be accessed without login
 
 *Team*
-- Diego Alejandro Gonzáles Ospina: psydiego1@gmail.com
+- Diego Alejandro Gonzáles Ospina: diego.gonzalezo@upb.edu.co
 - Geronimo Gaviria Castañeda: Geronimo.gaviria@upb.edu.co
 - Pablo Loaiza Pérez: Pablo.loaizap@upb.edu.co
 
