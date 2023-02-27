@@ -4,11 +4,7 @@ const xhr = new XMLHttpRequest();
 
 function onRequestHandler() {
 	if(this.readyState === 4 && this.status === 200){
-		// 0 = UNSET
-		// 1 = OPENED
-		// 2 = HEADERS_RECEIVED
-		// 3 = LOADING
-		// 4 = DONE
+
 		const data = JSON.parse(this.response);
 		const HTMLResponse = document.querySelector("#UserApi");
 
