@@ -15,31 +15,8 @@ function onRequestHandler() {
 		const tpl = data.map(user => `<li>👤 ${user.name} 📧 ${user.email}</li>`);
 		HTMLResponse.innerHTML = `<ul>${tpl}</ul>`
 	}
-
-
-
-
-
 }
 
 xhr.addEventListener("load", onRequestHandler);
 xhr.open('GET', `${API_URL}/users`);
 xhr.send();
-
-/*const HTMLResponse = document.querySelector("#UserApi");
-const ul = document.createElement('ul');
-
-fetch('${API_URL}/users')
-.then((response)=> response.json())
-.then((users)=>{
-	users.forEach(user=>{
-		let elem = document.createElement("li");
-		elem.appendChild(
-			document.createTextNode('👤 ${user.name} 📧 ${user.email}')
-		);
-		ul.appendChild(elem);
-	});
-	HTMLResponse.appendChild(ul);
-	//const tpl = users.map(user => <li>👤${user.name} 📧${user.email}</li>);
-	//HTMLResponse.innerHTML = <ul>${tpl}</ul>;
-});*/
