@@ -4,7 +4,6 @@ let impEmpresa = document.getElementById("compañiaSignUp");
 let impCorreo = document.getElementById("correoSignUp");
 let impContraseña = document.getElementById("contraseñaSignUp");
 let impRegistrarse = document.getElementById("formSignUp");
-
 //varailbes incio de secion --------------------------------------------->
 let impContraseñaSingIn = document.getElementById("contraseñaSignIn");
 let impCorreoSingIn = document.getElementById("correoSignIn");
@@ -52,6 +51,7 @@ function valDatos(event) {
     };
 
     localStorage.setItem("Usuario", JSON.stringify(Usuario));
+    localStorage.setItem("Control_SignUp", "true");
   }
 }
 
@@ -77,18 +77,36 @@ function Login(event) {
     };
 
     localStorage.setItem("secionUsuario", JSON.stringify(secionUsuario));
+    localStorage.setItem("Control_SingIn", "true");
    
   }
 }
+
 function submitSignIn(event){
+  Control_SingIn = localStorage.getItem("Control_SingIn");
+  if(Control_SingIn === "true"){
+    event.preventDefault();
+    location.href = "../index.html";
+  }
   event.preventDefault();
-  location.href = "../index.html";
 }
 function submitSignUp(event){
+  Control_SignUp = localStorage.getItem("Control_SignUp");
+  if(Control_SignUp === "true"){
+    event.preventDefault();
+    location.href = "pages-sign-in.html";
+  }
   event.preventDefault();
-  location.href = "pages-sign-in.html";
 }
+Control_SingIn = localStorage.getItem("Control_SingIn");
+Control_SignUp = localStorage.getItem("Control_SignUp");
+if(Control_SingIn) localStorage.setItem("Control_SingIn", "false");
+if(Control_SignUp) localStorage.setItem("Control_SignUp", "false");
 
 
+
+
+console.log(localStorage.getItem("Control_SingIn"));
+console.log(localStorage.getItem("Control_SignUp"));
 console.log(JSON.parse(localStorage.getItem('secionUsuario')));
 console.log(JSON.parse(localStorage.getItem('Usuario')));
