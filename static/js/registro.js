@@ -9,7 +9,6 @@ let impRegistrarse = document.getElementById("formSignUp");
 let impContraseñaSingIn = document.getElementById("contraseñaSignIn");
 let impCorreoSingIn = document.getElementById("correoSignIn");
 let impLogearse = document.getElementById("formSignIn");
-let backindex = document.getElementById("btnSignIn-back");
 //ERRORES-------------------------------------------------------->
 let errorNombre = document.getElementById("form-label-error-nombre");
 let errorCorreo = document.getElementById("form-label-error-correo");
@@ -22,10 +21,6 @@ if (impLogearse != null) impLogearse.addEventListener("submit", Login);
 if (impRegistrarse != null) impRegistrarse.addEventListener("submit", valDatos);
 
 //Funciones ------------------------------------------------------------->
-backindex.addEventListener("click", (event) => {
-  event.preventDefault();
-  window.location.href = event.target.href;
-});
 
 function valDatos(event) {
   let valdiacionCorreo = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
@@ -57,7 +52,6 @@ function valDatos(event) {
     };
 
     localStorage.setItem("Usuario", JSON.stringify(Usuario));
-    window.location.replace("pages-sign-in.html");
   }
 }
 
@@ -83,6 +77,18 @@ function Login(event) {
     };
 
     localStorage.setItem("secionUsuario", JSON.stringify(secionUsuario));
-    window.location.replace("../index.html");
+   
   }
 }
+function submitSignIn(event){
+  event.preventDefault();
+  location.href = "../index.html";
+}
+function submitSignUp(event){
+  event.preventDefault();
+  location.href = "pages-sign-in.html";
+}
+
+
+console.log(JSON.parse(localStorage.getItem('secionUsuario')));
+console.log(JSON.parse(localStorage.getItem('Usuario')));

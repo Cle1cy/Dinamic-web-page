@@ -39,7 +39,7 @@
 						<div class="card">
 							<div class="card-body">
 								<div class="m-sm-4">
-									<form id="formSignUp">
+									<form id="formSignUp" onsubmit="submitSignUp(event)">
 										<div class="mb-3">
 											<label class="form-label">Nombres y apellidos</label>
 											<input class="form-control form-control-lg" id="nombreSignUp" type="text" name="name"  placeholder="Escriba sus nombress y apellidos" />
@@ -63,7 +63,6 @@
 										</div>
 										<div class="text-center mt-3">	
 											<button type="submit" class="btn btn-lg btn-primary" id="btnSignUp">Sign up</button> 
-											<a href="../index.html" id="btnSignIn-back" class="btn btn-lg btn-primary">Volver a inicio</a>
 										</div>
 									</form>
 								</div>
