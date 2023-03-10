@@ -1,17 +1,27 @@
-const API_URL = 'https://jsonplaceholder.typicode.com';
+window.onload = init; 
 
-const xhr = new XMLHttpRequest();
-
-function onRequestHandler(){
-	if(this.readyState === 4 && this.status === 200){
-		const data = JSON.parse(this.response);
-		const HTMLResponse = document.querySelector("#app_usuarios");
-
-		const tpl = data.map((user) => '<li>${user.name} 📧 ${user.email}</li>');
-		HTMLResponse.innerHTML = '<ul>${tpl}</ul>';
-	}
+function init(){
+	leerDatos(); 
 }
 
-xhr.addEventListener("load", onRequestHandler);
-xhr.open('GET', `${API_URL}/users`);
-xhr.send();
+function leerDatos(){
+	let fuente_datos = 'https://randomuser.me/api/';
+
+	for(let i = 0; i < 9; i++){
+		fetch(fuente_datos)
+		.then(res => res.json())
+		.then(pintarDatos);
+	}	
+}
+
+function pintarDatos(datos){
+	let usuarios = datos;
+	let html = "";
+	console.log(usuarios);
+	html += crearUsuario(usuarios);
+}
+
+function crearUsuario(datos){
+	let nombre = datos.name;
+	let email = datos.email;
+}
