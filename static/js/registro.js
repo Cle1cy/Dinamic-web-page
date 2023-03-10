@@ -81,7 +81,6 @@ function Login(event) {
       contraseña: MD5passwordLognIn,
       correo: impCorreoSingIn.value,
     };
-
     localStorage.setItem("secionUsuario", JSON.stringify(secionUsuario));
     window.location.replace("../index.html");
   }
