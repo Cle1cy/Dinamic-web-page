@@ -2,13 +2,30 @@ const API_URL = "https://jsonplaceholder.typicode.com";
 
 const xhr = new XMLHttpRequest();
 
+function getRandomInt(max) {
+	return Math.floor(Math.random() * max);
+  }
+  
+
 function onRequestHandler(){
 	if(this.readyState === 4 && this.status === 200){
 		const data = JSON.parse(this.response);
 		const HTMLresponse = document.querySelector("#app_usuarios");
-
-		const tpl = data.map((user) => `<li>${user.name} 📧 ${user.email}</li>`);
-		HTMLresponse.innerHTML = `<ul>${tpl}</ul>`;	
+		let tmp, rnd;
+		const tpl = [];
+		const numUsuarios = data.length;
+		for(let i=0; i<2; i++){
+			rnd = getRandomInt(numUsuarios);
+			if(tmp != 0){
+				while(tmp == rnd){
+					rnd = getRandomInt(numUsuarios);
+				}
+			}
+			tmp = rnd;
+			tpl.push(`<li>${data[rnd].name} 📧 ${data[rnd].email}</li>`);
+			
+		}
+		HTMLresponse.innerHTML = `<ul>${tpl.join('')}</ul>`;	
 	}
 }
 
